@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="app">
+    <section class="dashboard">
+      <div class="topbar">
+        <div>
+          <p class="eyebrow">REAL-TIME WEATHER</p>
+          <h1>Weather Dashboard</h1>
+          <p class="subtitle">Check current weather conditions for any city.</p>
+        </div>
+        <div class="api-badge">Open-Meteo API</div>
+      </div>
+
+      <form id="searchForm" class="search-box">
+        <input id="cityInput" type="text" placeholder="Enter city name..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+
+      <div id="message" class="message hidden"></div>
+      <div id="loading" class="loading hidden">Fetching weather data...</div>
+
+      <section id="weatherCard" class="weather-card hidden">
+        <div class="location">
+          <div>
+            <p class="label">CURRENT WEATHER</p>
+            <h2 id="cityName">--</h2>
+            <p id="countryName">--</p>
+          </div>
+          <div id="weatherIcon" class="weather-icon">☀️</div>
+        </div>
+
+        <div class="main-weather">
+          <div class="temperature"><span id="temperature">--</span><sup>°C</sup></div>
+          <div>
+            <h3 id="condition">--</h3>
+            <p>Feels like <strong id="feelsLike">--</strong>°C</p>
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="detail-card">
+            <span class="detail-icon">💧</span>
+            <div><small>Humidity</small><strong id="humidity">--%</strong></div>
+          </div>
+          <div class="detail-card">
+            <span class="detail-icon">💨</span>
+            <div><small>Wind Speed</small><strong id="wind">-- km/h</strong></div>
+          </div>
+          <div class="detail-card">
+            <span class="detail-icon">🌡️</span>
+            <div><small>Temperature</small><strong id="tempDetail">--°C</strong></div>
+          </div>
+          <div class="detail-card">
+            <span class="detail-icon">🕒</span>
+            <div><small>Updated</small><strong id="updated">--</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <p class="footer">Weather data provided by Open-Meteo</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
